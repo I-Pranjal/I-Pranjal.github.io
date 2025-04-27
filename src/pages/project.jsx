@@ -1,8 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "framer-motion";
-import React,{ useRef } from "react";
+import React, { useRef } from "react";
 import { Github, ExternalLink } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export default function Projects() {
     const ref = useRef(null);
@@ -14,40 +13,31 @@ export default function Projects() {
 
     const projects = [
         {
-            title: "E-Commerce Platform",
+            title: "Magnews (Blogging and News Website)",
             description:
-                "A full-featured e-commerce platform with payment processing, user authentication, and admin dashboard.",
-            image: "/placeholder.svg?height=400&width=600",
-            tags: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-            githubUrl: "#",
-            liveUrl: "#",
+                "A full-stack web app integrating a news portal and blogging platform, with user authentication, real-time notifications, and personalized content recommendations.",
+            image: "./magnews.png",
+            tags: ["MongoDB", "ReactJS", "Node.js", "Express.js", "Firebase", "Tailwind CSS"],
+            githubUrl: "https://github.com/I-Pranjal/Blognews-",
+            liveUrl: "https://blognews-delta.vercel.app/",
         },
         {
-            title: "Task Management App",
+            title: "Aviation Team Website",
             description:
-                "A collaborative task management application with real-time updates and team workspaces.",
-            image: "/placeholder.svg?height=400&width=600",
-            tags: ["React", "Firebase", "Tailwind CSS", "Redux"],
-            githubUrl: "#",
-            liveUrl: "#",
+                "A dynamic website for showcasing projects, sponsors, and events, with real-time updates via Firebase and a fully responsive UI.",
+            image: "./phoenix.png",
+            tags: ["ReactJS", "Node.js", "Express.js", "Firebase", "Tailwind CSS", "Vite"],
+            githubUrl: "https://github.com/I-Pranjal/Team-Phoenix-",
+            liveUrl: "https://teamphoenixnitjsr.netlify.app/",
         },
         {
-            title: "Finance Dashboard",
+            title: "Smart India Hackathon Project",
             description:
-                "An interactive dashboard for tracking personal finances with data visualization and insights.",
-            image: "/placeholder.svg?height=400&width=600",
-            tags: ["TypeScript", "D3.js", "Express", "PostgreSQL"],
-            githubUrl: "#",
-            liveUrl: "#",
-        },
-        {
-            title: "Social Media Platform",
-            description:
-                "A social networking platform with user profiles, posts, comments, and real-time messaging.",
-            image: "/placeholder.svg?height=400&width=600",
-            tags: ["React", "GraphQL", "Node.js", "MongoDB"],
-            githubUrl: "#",
-            liveUrl: "#",
+                "A prototype dashboard for Smart India Hackathon problem statements, with mentor feedback loops and real-world collaboration features.",
+            image: "./sih.png",
+            tags: ["ReactJS", "Node.js", "Express.js", "MongoDB", "Firebase"],
+            githubUrl: "https://github.com/I-Pranjal/SIHclone",
+            liveUrl: "https://sihclone.netlify.app/",
         },
     ];
 
@@ -55,9 +45,7 @@ export default function Projects() {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-            },
+            transition: { staggerChildren: 0.2 },
         },
     };
 
@@ -66,21 +54,16 @@ export default function Projects() {
         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
     };
 
-    // Parallax effect
     const yParallax = useTransform(scrollYProgress, [0, 1], [-100, 100]);
 
     return (
-        <section
-            id="projects"
-            className="py-20 md:py-32 bg-muted/30 relative overflow-hidden"
-        >
-            {/* Animated background elements */}
+        <section id="projects" className="py-20 md:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
             <motion.div
-                className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-primary/10 blur-3xl -z-10"
+                className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-white dark:bg-gray-900 blur-3xl -z-10"
                 style={{ y: yParallax }}
             />
             <motion.div
-                className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-primary/10 blur-3xl -z-10"
+                className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-white dark:bg-gray-900 blur-3xl -z-10"
                 style={{ y: useTransform(scrollYProgress, [0, 1], [100, -100]) }}
             />
 
@@ -90,7 +73,7 @@ export default function Projects() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.5 }}
-                        className="text-3xl font-bold mb-2"
+                        className="text-3xl font-bold mb-2 text-black dark:text-green-500"
                     >
                         My Projects
                     </motion.h2>
@@ -106,10 +89,9 @@ export default function Projects() {
                         initial={{ opacity: 0 }}
                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8"
+                        className="text-lg text-black dark:text-green-500 max-w-2xl mx-auto mb-8"
                     >
-                        Here are some of my recent projects. Each project solves a unique
-                        problem and demonstrates different aspects of my technical skills.
+                        Here are some of my highlighted projects, demonstrating practical skills in full-stack development and teamwork.
                     </motion.p>
                 </div>
 
@@ -130,10 +112,10 @@ export default function Projects() {
                             }}
                             className="h-full"
                         >
-                            <div className="overflow-hidden h-full group border rounded-lg shadow-md">
+                            <div className="overflow-hidden h-full group border rounded-lg shadow-md dark:border-gray-700">
                                 <div className="relative aspect-video overflow-hidden">
                                     <motion.div
-                                        className="absolute inset-0 bg-primary/20 z-10 opacity-0 group-hover:opacity-100 flex items-center justify-center"
+                                        className="absolute inset-0 bg-primary/20 dark:bg-primary/30 z-10 opacity-0 group-hover:opacity-100 flex items-center justify-center"
                                         transition={{ duration: 0.3 }}
                                     >
                                         <motion.div
@@ -142,20 +124,24 @@ export default function Projects() {
                                             transition={{ delay: 0.2, duration: 0.3 }}
                                             className="flex gap-4"
                                         >
-                                             <a
-                                                to={project.githubUrl}
+                                            <a
+                                                href={project.githubUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="px-4 py-2 bg-secondary text-white rounded-md flex items-center gap-2"
                                             >
                                                 <Github size={16} />
                                                 Code
-                                             </a>
-                                             <a
-                                                to={project.liveUrl}
+                                            </a>
+                                            <a
+                                                href={project.liveUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="px-4 py-2 bg-primary text-white rounded-md flex items-center gap-2"
                                             >
                                                 <ExternalLink size={16} />
                                                 Live Demo
-                                             </a>
+                                            </a>
                                         </motion.div>
                                     </motion.div>
                                     <motion.img
@@ -166,7 +152,7 @@ export default function Projects() {
                                 </div>
                                 <div className="p-6">
                                     <motion.h3
-                                        className="text-xl font-bold mb-2"
+                                        className="text-xl font-bold mb-2 text-black dark:text-green-500"
                                         initial={{ opacity: 0, y: 10 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.1, duration: 0.3 }}
@@ -174,7 +160,7 @@ export default function Projects() {
                                         {project.title}
                                     </motion.h3>
                                     <motion.p
-                                        className="text-muted-foreground mb-4"
+                                        className="text-black dark:text-green-500 mb-4"
                                         initial={{ opacity: 0, y: 10 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.2, duration: 0.3 }}
@@ -191,7 +177,7 @@ export default function Projects() {
                                         {project.tags.map((tag, tagIndex) => (
                                             <motion.span
                                                 key={tagIndex}
-                                                className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full"
+                                                className="bg-white text-primary dark:bg-gray-900 dark:text-primary-foreground text-xs px-3 py-1 rounded-full"
                                                 initial={{ opacity: 0, scale: 0.8 }}
                                                 whileInView={{ opacity: 1, scale: 1 }}
                                                 transition={{ delay: 0.4 + tagIndex * 0.1, duration: 0.2 }}
@@ -214,13 +200,15 @@ export default function Projects() {
                     className="text-center mt-12"
                 >
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                         <a
-                            to="https://github.com"
+                        <a
+                            href="https://github.com/I-Pranjal"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="px-6 py-3 border border-primary text-primary rounded-md flex items-center justify-center gap-2"
                         >
                             <Github className="mr-2 h-4 w-4" />
                             See More on GitHub
-                         </a>
+                        </a>
                     </motion.div>
                 </motion.div>
             </div>
