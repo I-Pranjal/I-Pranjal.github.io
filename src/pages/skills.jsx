@@ -72,7 +72,7 @@ export default function Skills() {
     };
 
     return (
-        <section id="skills" className="py-20 md:py-32 relative overflow-hidden">
+        <section id="skills" className="py-20 md:py-16 relative overflow-hidden bg-white text-black dark:bg-gray-900 dark:text-green-500">
             <div className="container px-4 md:px-6 mx-auto">
                 <div className="text-center mb-16">
                     <motion.h2

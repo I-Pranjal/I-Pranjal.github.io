@@ -36,7 +36,7 @@ export default function About() {
     };
 
     return (
-        <section id="about" className="py-20 md:py-32 bg-white font-2xl relative overflow-hidden dark:bg-gray-800">
+        <section id="about" className="py-20 md:py-32 bg-white font-2xl relative overflow-hidden dark:bg-gray-800 text-black">
             <motion.div
                 className="absolute inset-0 -z-10 opacity-30"
                 initial={{ opacity: 0 }}
@@ -119,7 +119,7 @@ export default function About() {
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-lg mb-4 text-muted-foreground"
+                            className="text-xl mb-4 text-muted-foreground"
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
@@ -129,7 +129,7 @@ export default function About() {
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-lg mb-6 text-muted-foreground"
+                            className="text-xl mb-6 text-muted-foreground"
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
@@ -155,8 +155,8 @@ export default function About() {
                                     whileHover={{ scale: 1.03, x: 5 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
-                                    <h3 className="font-bold mb-2">{item.label}</h3>
-                                    <p className="text-muted-foreground">{item.value}</p>
+                                    <h3 className="font-bold mb-2 text-lg">{item.label}</h3>
+                                    <p className="text-muted-foreground text-lg">{item.value}</p>
                                 </motion.div>
                             ))}
                         </motion.div>
