@@ -36,7 +36,7 @@ export default function About() {
     };
 
     return (
-        <section id="about" className="py-20 md:py-32 bg-muted/30 relative overflow-hidden">
+        <section id="about" className="py-20 md:py-32 bg-white font-2xl relative overflow-hidden dark:bg-gray-800">
             <motion.div
                 className="absolute inset-0 -z-10 opacity-30"
                 initial={{ opacity: 0 }}
@@ -44,7 +44,7 @@ export default function About() {
                 transition={{ duration: 1 }}
             >
                 <motion.div
-                    className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+                    className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl"
                     animate={{
                         x: [50, -50, 50],
                         y: [-50, 50, -50],
@@ -52,7 +52,7 @@ export default function About() {
                     transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
                 />
                 <motion.div
-                    className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+                    className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl"
                     animate={{
                         x: [-50, 50, -50],
                         y: [50, -50, 50],
@@ -162,7 +162,7 @@ export default function About() {
                         </motion.div>
 
                         <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            < button asChild>
+                            < button className="dark:bg-green-400 dark:text-white px-4 py-2 rounded-lg hover:bg-primary/80 transition duration-300 bg-white text-green-400 border-2 shadow-black shadow-2xl ">
                                 <a href="#" className="flex items-center gap-2">
                                     <Download size={16} />
                                     Download Resume
@@ -172,6 +172,7 @@ export default function About() {
                     </motion.div>
                 </motion.div>
             </div>
+        
         </section>
     );
 }
