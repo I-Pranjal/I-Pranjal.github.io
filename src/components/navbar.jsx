@@ -18,9 +18,9 @@ const Navbar = () => {
     }, [darkMode]);
 
     return (
-        <nav className="w-full text-blue-600 dark:text-emerald-500 md:fixed md:top-0 fixed bottom-0 h-fit z-50 bg-white dark:bg-neutral-900">
+        <nav className="w-full text-blue-600 dark:text-emerald-500 md:fixed md:top-0 fixed bottom-0 h-fit z-50 bg-neutral-300 dark:bg-neutral-900">
             <div className="hidden md:flex justify-between items-center p-4">
-                <ul className="flex justify-evenly w-full">
+                <ul className="flex justify-center gap-8 w-full">
                     <li>
                         <a
                             href="#home"
@@ -106,7 +106,7 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
-            <div className="flex md:hidden justify-around items-center p-5 bg-white dark:bg-neutral-900 z-50">
+            <div className="flex md:hidden justify-around items-center p-5 bg-neutral-300 dark:bg-neutral-900 z-50">
                 <ul className="flex justify-evenly w-full items-center">
                     <li>
                         <a

@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-// import { button } from "@/components/ui/button";
-import {Link} from "react-router-dom";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import React from "react";
-
 
 export default function Hero() {
     const ref = useRef(null);
@@ -38,18 +35,21 @@ export default function Hero() {
     const subtitle = "Full Stack Developer";
 
     return (
-        <section id="hero" className="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+        <section
+            id="hero"
+            className="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-white dark:bg-gray-900 text-gray-900 dark:text-emerald-500"
+        >
             <motion.div
                 className="absolute inset-0 -z-10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5 }}
             >
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background/0" />
+                <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background/0 dark:from-primary/10 dark:to-gray-900" />
                 {Array.from({ length: 20 }).map((_, i) => (
                     <motion.div
                         key={i}
-                        className="absolute rounded-full bg-primary/10"
+                        className="absolute rounded-full bg-primary/10 dark:bg-primary/20"
                         initial={{
                             x: Math.random() * 100 - 50 + "%",
                             y: Math.random() * 100 - 50 + "%",
@@ -85,7 +85,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
-                    className="mb-2 text-primary"
+                    className="mb-2 text-primary dark:text-primary-light"
                 >
                     <span className="text-lg md:text-xl">Hello, I'm</span>
                 </motion.div>
@@ -107,7 +107,7 @@ export default function Hero() {
                     variants={textVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    className="text-2xl md:text-3xl font-medium mb-6 text-muted-foreground flex justify-center flex-wrap"
+                    className="text-2xl md:text-3xl font-medium mb-6 text-muted-foreground dark:text-green-400 text-neutral-800 flex justify-center flex-wrap"
                 >
                     {subtitle.split("").map((char, index) => (
                         <motion.span key={index} variants={letterVariants} className="inline-block">
@@ -120,7 +120,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
-                    className="text-lg mb-8 max-w-2xl mx-auto text-muted-foreground"
+                    className="text-lg mb-8 max-w-2xl mx-auto text-muted-foreground text-black dark:text-green-400"
                 >
                     I build exceptional digital experiences with modern web technologies. Specializing in React, Node.js, and
                     everything in between.
@@ -133,12 +133,12 @@ export default function Hero() {
                     className="flex flex-col sm:flex-row gap-4 justify-center"
                 >
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <button size="lg" >
-                            <a href="#projects" >View My Work</a>
+                        <button size="lg" className="bg-primary text-green-600 p-2 border-2 rounded-md shadow-xl dark:text-white" >
+                            <a href="#projects">View My Work</a>
                         </button>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <button size="lg" variant="outline"  >
+                    <button size="lg" className="bg-primary text-green-600 p-2 border-2 rounded-md shadow-xl dark:text-white" >
                             <a href="#contact">Contact Me</a>
                         </button>
                     </motion.div>
@@ -153,7 +153,7 @@ export default function Hero() {
             >
                 <a
                     href="#about"
-                    className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors"
+                    className="flex flex-col items-center text-muted-foreground hover:text-foreground text-green-300 dark:text-gray-400 dark:hover:text-emerald-500 transition-colors"
                 >
                     <span className="text-sm mb-2">Scroll Down</span>
                     <motion.div
@@ -164,7 +164,7 @@ export default function Hero() {
                         <motion.div
                             animate={{ scale: [1, 1.2, 1] }}
                             transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-                            className="absolute -inset-2 rounded-full bg-primary/20 blur-md"
+                            className="absolute -inset-2 rounded-full bg-primary/20 dark:bg-primary/30 blur-md"
                         />
                         <ArrowDown size={20} />
                     </motion.div>
@@ -175,7 +175,7 @@ export default function Hero() {
                 {Array.from({ length: 15 }).map((_, i) => (
                     <motion.div
                         key={i}
-                        className="absolute rounded-full bg-primary/30"
+                        className="absolute rounded-full bg-primary/30 dark:bg-primary/50"
                         initial={{
                             x: Math.random() * 100 + "%",
                             y: Math.random() * 100 + "%",
