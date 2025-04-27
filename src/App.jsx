@@ -7,9 +7,12 @@ import About from './pages/about'
 import Skills from './pages/skills'
 import Projects from './pages/project'
 import Contact from './pages/contact'
+import Footer from './pages/footer'
 
 
 function App() {
+
+
 
   return (
     <>
@@ -19,6 +22,7 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </>
     
   )
