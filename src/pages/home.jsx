@@ -3,6 +3,7 @@ import { ArrowDown } from "lucide-react";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import React from "react";
+import DeveloperStats from "../components/devstats";
 
 export default function Hero() {
     const ref = useRef(null);
@@ -37,10 +38,11 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-white dark:bg-gray-900 text-gray-900 dark:text-emerald-500"
+            className="relative h-auto py-20 flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-white dark:bg-gray-900 text-gray-900 dark:text-emerald-500"
         >
+
             <motion.div
-                className="absolute inset-0 -z-10"
+                className="relative inset-0 -z-10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5 }}
@@ -125,7 +127,7 @@ export default function Hero() {
                     I build exceptional digital experiences with modern web technologies. Specializing in React, Node.js, and
                     everything in between.
                 </motion.p>
-
+                <DeveloperStats />
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -145,11 +147,12 @@ export default function Hero() {
                 </motion.div>
             </motion.div>
 
+            
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 0.5 }}
-                className="absolute bottom-20"
+                className="relative bottom-0 m-10"
             >
                 <a
                     href="#about"
