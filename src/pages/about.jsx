@@ -101,7 +101,7 @@ export default function About() {
                     <motion.div ref={contentRef} style={{ y: useTransform(scrollYProgress, [0, 1], [50, -50]) }}>
                         <motion.h2
                             variants={itemVariants}
-                            className="text-3xl font-bold mb-2"
+                            className="text-3xl font-bold mb-2 text-black dark:text-green-400"
                             initial={{ opacity: 0, x: 50 }}
                             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
                             transition={{ duration: 0.5 }}
@@ -119,7 +119,7 @@ export default function About() {
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-xl mb-4 text-muted-foreground"
+                            className="text-xl mb-4 text-muted-foreground text-black dark:text-green-400"
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
@@ -129,7 +129,7 @@ export default function About() {
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-xl mb-6 text-muted-foreground"
+                            className="text-xl mb-6 text-muted-foreground text-black dark:text-green-400"
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
@@ -154,6 +154,7 @@ export default function About() {
                                     variants={itemVariants}
                                     whileHover={{ scale: 1.03, x: 5 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                    className="text-black dark:text-green-400"
                                 >
                                     <h3 className="font-bold mb-2 text-lg">{item.label}</h3>
                                     <p className="text-muted-foreground text-lg">{item.value}</p>

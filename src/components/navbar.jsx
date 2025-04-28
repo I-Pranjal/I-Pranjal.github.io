@@ -3,7 +3,7 @@ import { House, CircleUserRound, FolderGit2, Mail, Code } from "lucide-react";
 
 const Navbar = () => {
     const [active, setActive] = useState("home");
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
 
     const handleSetActive = (section) => {
         setActive(section);

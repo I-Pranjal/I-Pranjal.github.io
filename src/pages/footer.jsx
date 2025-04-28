@@ -10,7 +10,7 @@ function Footer() {
     ];
 
     return (
-        <div className="bg-muted/30 py-10 text-center">
+        <div className="bg-muted/30 py-10 text-center pb-20 bg-neutral-800">
             <p className="text-3xl font-normal-bold">Pranjal Mishra</p>
             {/* Links */}
             <div className="flex justify-center items-center gap-8 mt-4">
