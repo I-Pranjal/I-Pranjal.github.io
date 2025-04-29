@@ -35,6 +35,7 @@ export default function Hero() {
     const title = "Pranjal Mishra";
     const subtitle = "Full Stack Developer";
 
+
     return (
         <section
             id="hero"
@@ -141,7 +142,7 @@ export default function Hero() {
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <button size="lg" className="bg-primary text-green-600 p-2 border-2 rounded-md shadow-xl dark:text-white" >
-                            <a href="#contact">Contact Me</a>
+                            <a href='https://wa.me/+918858641124'>Contact Me</a>
                         </button>
                     </motion.div>
                 </motion.div>

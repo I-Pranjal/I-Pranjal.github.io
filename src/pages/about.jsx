@@ -163,12 +163,12 @@ export default function About() {
                         </motion.div>
 
                         <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            < button className="dark:bg-green-400 dark:text-white px-4 py-2 rounded-lg hover:bg-primary/80 transition duration-300 bg-white text-green-400 border-2 shadow-black shadow-2xl ">
-                                <a href="#" className="flex items-center gap-2">
+                            <button className="dark:bg-green-400 dark:text-white px-4 py-2 rounded-lg hover:bg-primary/80 transition duration-300 bg-white text-green-400 border-2 shadow-black shadow-2xl ">
+                                <a href="./Pranjal CV.pdf" download className="flex items-center gap-2">
                                     <Download size={16} />
                                     Download Resume
                                 </a>
-                            </ button>
+                            </button>
                         </motion.div>
                     </motion.div>
                 </motion.div>
