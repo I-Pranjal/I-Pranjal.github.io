@@ -57,7 +57,7 @@ export default function Projects() {
     const yParallax = useTransform(scrollYProgress, [0, 1], [-100, 100]);
 
     return (
-        <section id="projects" className="py-20 md:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <section id="projects" className="py-20 md:py-32 bg-white dark:bg-gray-900 relative overflow-hidden flex flex-col items-center">
             <motion.div
                 className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-white dark:bg-gray-900 blur-3xl -z-10"
                 style={{ y: yParallax }}
